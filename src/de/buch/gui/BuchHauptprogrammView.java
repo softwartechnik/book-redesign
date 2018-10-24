@@ -1,0 +1,75 @@
+package de.buch.gui;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+
+import de.buch.datenhaltung.*;
+import de.buch.fachlogik.BuecherVerwaltung;
+
+
+public class BuchHauptprogrammView extends Frame {
+
+	private static final long serialVersionUID = 1L;
+	private Controller controller;
+
+	public BuchHauptprogrammView(Controller controller) {
+		super("Buchverwaltung");
+		this.controller = controller;
+		setSize(250, 290);
+		setLocation(50,100);
+		add(createButtonPanel());
+		setVisible(true);
+	}
+
+	private Panel createButtonPanel() {
+		Panel p = new Panel(new GridLayout(5, 1));
+		Button neu = new Button("Neu");
+		neu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controller.neu();
+			}
+		});
+		Button laden = new Button("Laden");
+		laden.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controller.laden();
+			}
+
+		});
+		Button listen = new Button("Liste");
+		listen.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controller.liste();
+			}
+		});
+		Button speicher = new Button("Speichern");
+		speicher.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controller.speichern();
+			}
+
+		});
+		Button abr = new Button("Fertig");
+		abr.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controller.fertig();
+			}
+		});
+		p.add(neu);
+		p.add(laden);
+		p.add(listen);
+		p.add(speicher);
+		p.add(abr);
+		return p;
+	}
+
+	public static void main(String[] args) {
+		BuecherVerwaltung buchliste = new BuecherVerwaltung(new BuchSerializeDAO(new File("/Users/dwiesmann/IO/buchliste.ser")));
+		//BuecherVerwaltung buchliste = new BuecherVerwaltung(new BuchDBDAO("/home/dwiesmann/DB/buchDB"));
+		Controller controller = new Controller(buchliste);
+		controller.start();
+
+	}
+}
