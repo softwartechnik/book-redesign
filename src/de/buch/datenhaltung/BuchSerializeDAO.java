@@ -1,5 +1,6 @@
 package de.buch.datenhaltung;
 
+import de.buch.fachlogik.Buch;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -9,54 +10,53 @@ import java.io.ObjectOutputStream;
 import java.util.LinkedList;
 import java.util.List;
 
-import de.buch.fachlogik.Buch;
-
 public class BuchSerializeDAO implements IBuchDAO {
-	private File f;
 
-	public BuchSerializeDAO(File f) {
-		this.f = f;
-	}
+  private File f;
 
-	@SuppressWarnings("unchecked")
-	public List<Buch> laden() throws DatenException {
-		List<Buch> liste = null;
-		ObjectInputStream ois = null;
-		try {
-			FileInputStream fis = new FileInputStream(f);
-			ois = new ObjectInputStream(fis);
-			liste = ((List<Buch>) ois.readObject());
-		} catch (Exception e) {
-			e.printStackTrace();
-			throw new DatenException("Laden nicht möglich.");
-		} finally {
-			try {
-				ois.close();
-			} catch (IOException e) {
-			}
-		}
-		if (liste == null) {
-			liste = new LinkedList<Buch>();
-		}
-		return liste;
-	}
+  public BuchSerializeDAO(File f) {
+    this.f = f;
+  }
 
-	public void speichern(List<Buch> liste) throws DatenException {
-		ObjectOutputStream oos = null;
+  @SuppressWarnings("unchecked")
+  public List<Buch> laden() throws DatenException {
+    List<Buch> liste = null;
+    ObjectInputStream ois = null;
+    try {
+      FileInputStream fis = new FileInputStream(f);
+      ois = new ObjectInputStream(fis);
+      liste = ((List<Buch>) ois.readObject());
+    } catch (Exception e) {
+      e.printStackTrace();
+      throw new DatenException("Laden nicht möglich.");
+    } finally {
+      try {
+        ois.close();
+      } catch (IOException e) {
+      }
+    }
+    if (liste == null) {
+      liste = new LinkedList<Buch>();
+    }
+    return liste;
+  }
 
-		try {
-			FileOutputStream fos = new FileOutputStream(f);
-			oos = new ObjectOutputStream(fos);
-			oos.writeObject(liste);
-		} catch (Exception e) {
-			throw new DatenException("Laden nicht möglich");
-		} finally {
-			try {
-				oos.close();
-			} catch (IOException e) {
+  public void speichern(List<Buch> liste) throws DatenException {
+    ObjectOutputStream oos = null;
 
-			}
-		}
-	}
+    try {
+      FileOutputStream fos = new FileOutputStream(f);
+      oos = new ObjectOutputStream(fos);
+      oos.writeObject(liste);
+    } catch (Exception e) {
+      throw new DatenException("Laden nicht möglich");
+    } finally {
+      try {
+        oos.close();
+      } catch (IOException e) {
+
+      }
+    }
+  }
 
 }

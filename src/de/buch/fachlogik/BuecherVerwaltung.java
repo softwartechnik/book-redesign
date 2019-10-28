@@ -1,16 +1,16 @@
 package de.buch.fachlogik;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import de.buch.datenhaltung.DatenException;
 import de.buch.datenhaltung.IBuchDAO;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * A management suite on top of the dao to provide domain specific books. Basically a repository
  * that was called "Verwaltung" by someone.
  */
 public class BuecherVerwaltung {
+
   private List<Buch> liste;
   private IBuchDAO dao;
 
@@ -19,21 +19,21 @@ public class BuecherVerwaltung {
    *
    * @param dao The book dao.
    */
-  public BuecherVerwaltung(IBuchDAO dao){
-	  liste = new LinkedList<Buch>();
-	  this.dao = dao;
+  public BuecherVerwaltung(IBuchDAO dao) {
+    liste = new LinkedList<Buch>();
+    this.dao = dao;
   }
 
-  public void add(Buch b){
-	  liste.add(b);
+  public void add(Buch b) {
+    liste.add(b);
   }
 
-  public Buch getBuch(int index){
-	  return liste.get(index);
+  public Buch getBuch(int index) {
+    return liste.get(index);
   }
 
-  public List<Buch> getBuchliste(){
-	  return liste;
+  public List<Buch> getBuchliste() {
+    return liste;
   }
 
   /**
@@ -41,8 +41,8 @@ public class BuecherVerwaltung {
    *
    * @throws DatenException If somethings go wrong while reading data.
    */
-  public void laden() throws DatenException{
-	  liste=dao.laden();
+  public void laden() throws DatenException {
+    liste = dao.laden();
   }
 
   /**
@@ -50,7 +50,7 @@ public class BuecherVerwaltung {
    *
    * @throws DatenException If somethings go wrong while writing data.
    */
-  public void speichern() throws DatenException{
-	  dao.speichern(liste);
+  public void speichern() throws DatenException {
+    dao.speichern(liste);
   }
 }
