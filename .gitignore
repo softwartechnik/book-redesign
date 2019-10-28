@@ -1,0 +1,8 @@
+# IntelliJ
+.idea
+*.iml
+
+# Bullshit
+.settings
+.project
+.classpath
