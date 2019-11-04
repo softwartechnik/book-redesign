@@ -1,10 +1,17 @@
 plugins {
-    // Apply the java plugin to add support for Java
-    id 'java'
+  id 'java'
+  id 'application'
 }
 
+group 'de.softwartechnik.book'
+version '0.1.0-SNAPSHOT'
+
 repositories {
-    google()
-    mavenCentral()
-    jcenter()
+  google()
+  mavenCentral()
+  jcenter()
+}
+
+application {
+  mainClassName = "de.softwartechnik.book.gui.BuchHauptprogrammView"
 }
