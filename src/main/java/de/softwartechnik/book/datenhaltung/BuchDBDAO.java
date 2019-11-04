@@ -1,6 +1,5 @@
 package main.java.de.softwartechnik.book.datenhaltung;
 
-import main.java.de.softwartechnik.book.fachlogik.Buch;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -8,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.List;
+import main.java.de.softwartechnik.book.fachlogik.Buch;
 
 /**
  * Ein DAO für die Klasse Buch. Das DAO realisiert einen Zugriff auf eine relationale
@@ -72,7 +72,7 @@ public class BuchDBDAO implements IBuchDAO {
       s.executeUpdate("DELETE FROM buch WHERE id > -1");
       for (Buch buch : liste) {
         s.executeUpdate("INSERT INTO buch VALUES (" + buch.getID() + ",'"
-            + buch.getTitel() + "'," + buch.getPreis() + ")");
+          + buch.getTitel() + "'," + buch.getPreis() + ")");
       }
     } catch (SQLException e) {
       e.printStackTrace();

@@ -1,6 +1,5 @@
 package de.softwartechnik.book.gui;
 
-import main.java.de.softwartechnik.book.fachlogik.Buch;
 import java.awt.BorderLayout;
 import java.awt.Button;
 import java.awt.Dialog;
@@ -12,6 +11,7 @@ import java.awt.Panel;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import main.java.de.softwartechnik.book.fachlogik.Buch;
 
 public class BuchErfassungView extends Dialog {
 

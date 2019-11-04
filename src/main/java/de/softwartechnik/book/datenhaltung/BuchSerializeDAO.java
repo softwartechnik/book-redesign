@@ -1,6 +1,5 @@
 package main.java.de.softwartechnik.book.datenhaltung;
 
-import main.java.de.softwartechnik.book.fachlogik.Buch;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -9,6 +8,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.LinkedList;
 import java.util.List;
+import main.java.de.softwartechnik.book.fachlogik.Buch;
 
 public class BuchSerializeDAO implements IBuchDAO {
 

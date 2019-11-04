@@ -1,7 +1,5 @@
 package de.softwartechnik.book.gui;
 
-import main.java.de.softwartechnik.book.datenhaltung.BuchSerializeDAO;
-import main.java.de.softwartechnik.book.fachlogik.BuecherVerwaltung;
 import java.awt.Button;
 import java.awt.Frame;
 import java.awt.GridLayout;
@@ -9,6 +7,8 @@ import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import main.java.de.softwartechnik.book.datenhaltung.BuchSerializeDAO;
+import main.java.de.softwartechnik.book.fachlogik.BuecherVerwaltung;
 
 
 public class BuchHauptprogrammView extends Frame {
@@ -27,7 +27,7 @@ public class BuchHauptprogrammView extends Frame {
 
   public static void main(String[] args) {
     BuecherVerwaltung buchliste = new BuecherVerwaltung(
-        new BuchSerializeDAO(new File("/Users/dwiesmann/IO/buchliste.ser")));
+      new BuchSerializeDAO(new File("/Users/dwiesmann/IO/buchliste.ser")));
     //BuecherVerwaltung buchliste = new BuecherVerwaltung(new BuchDBDAO("/home/dwiesmann/DB/buchDB"));
     Controller controller = new Controller(buchliste);
     controller.start();

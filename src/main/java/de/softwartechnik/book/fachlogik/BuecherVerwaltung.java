@@ -1,9 +1,9 @@
 package main.java.de.softwartechnik.book.fachlogik;
 
-import main.java.de.softwartechnik.book.datenhaltung.DatenException;
-import main.java.de.softwartechnik.book.datenhaltung.IBuchDAO;
 import java.util.LinkedList;
 import java.util.List;
+import main.java.de.softwartechnik.book.datenhaltung.DatenException;
+import main.java.de.softwartechnik.book.datenhaltung.IBuchDAO;
 
 /**
  * A management suite on top of the dao to provide domain specific books. Basically a repository
