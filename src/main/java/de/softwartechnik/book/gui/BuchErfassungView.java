@@ -1,6 +1,6 @@
-package de.buch.gui;
+package de.softwartechnik.book.gui;
 
-import de.buch.fachlogik.Buch;
+import main.java.de.softwartechnik.book.fachlogik.Buch;
 import java.awt.BorderLayout;
 import java.awt.Button;
 import java.awt.Dialog;

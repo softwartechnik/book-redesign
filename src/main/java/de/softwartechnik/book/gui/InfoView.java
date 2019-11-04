@@ -1,4 +1,4 @@
-package de.buch.gui;
+package de.softwartechnik.book.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Button;

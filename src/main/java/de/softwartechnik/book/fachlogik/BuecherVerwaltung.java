@@ -1,7 +1,7 @@
-package de.buch.fachlogik;
+package main.java.de.softwartechnik.book.fachlogik;
 
-import de.buch.datenhaltung.DatenException;
-import de.buch.datenhaltung.IBuchDAO;
+import main.java.de.softwartechnik.book.datenhaltung.DatenException;
+import main.java.de.softwartechnik.book.datenhaltung.IBuchDAO;
 import java.util.LinkedList;
 import java.util.List;
 

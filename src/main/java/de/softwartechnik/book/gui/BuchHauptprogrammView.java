@@ -1,7 +1,7 @@
-package de.buch.gui;
+package de.softwartechnik.book.gui;
 
-import de.buch.datenhaltung.BuchSerializeDAO;
-import de.buch.fachlogik.BuecherVerwaltung;
+import main.java.de.softwartechnik.book.datenhaltung.BuchSerializeDAO;
+import main.java.de.softwartechnik.book.fachlogik.BuecherVerwaltung;
 import java.awt.Button;
 import java.awt.Frame;
 import java.awt.GridLayout;

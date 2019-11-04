@@ -1,4 +1,4 @@
-package de.buch.fachlogik;
+package main.java.de.softwartechnik.book.fachlogik;
 
 import java.io.Serializable;
 

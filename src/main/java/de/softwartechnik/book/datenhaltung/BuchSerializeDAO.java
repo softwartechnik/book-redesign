@@ -1,6 +1,6 @@
-package de.buch.datenhaltung;
+package main.java.de.softwartechnik.book.datenhaltung;
 
-import de.buch.fachlogik.Buch;
+import main.java.de.softwartechnik.book.fachlogik.Buch;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

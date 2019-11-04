@@ -1,6 +1,6 @@
-package de.buch.datenhaltung;
+package main.java.de.softwartechnik.book.datenhaltung;
 
-import de.buch.fachlogik.Buch;
+import main.java.de.softwartechnik.book.fachlogik.Buch;
 import java.util.List;
 
 /**

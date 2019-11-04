@@ -1,6 +1,6 @@
-package de.buch.datenhaltung;
+package main.java.de.softwartechnik.book.datenhaltung;
 
-import de.buch.fachlogik.Buch;
+import main.java.de.softwartechnik.book.fachlogik.Buch;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
