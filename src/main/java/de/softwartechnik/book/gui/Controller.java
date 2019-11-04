@@ -1,8 +1,8 @@
 package de.softwartechnik.book.gui;
 
-import main.java.de.softwartechnik.book.datenhaltung.DatenException;
-import main.java.de.softwartechnik.book.fachlogik.Buch;
-import main.java.de.softwartechnik.book.fachlogik.BuecherVerwaltung;
+import de.softwartechnik.book.datenhaltung.DatenException;
+import de.softwartechnik.book.fachlogik.Buch;
+import de.softwartechnik.book.fachlogik.BuecherVerwaltung;
 
 public class Controller {
 

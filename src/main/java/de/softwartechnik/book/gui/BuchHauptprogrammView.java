@@ -7,8 +7,8 @@ import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import main.java.de.softwartechnik.book.datenhaltung.BuchSerializeDAO;
-import main.java.de.softwartechnik.book.fachlogik.BuecherVerwaltung;
+import de.softwartechnik.book.datenhaltung.BuchSerializeDAO;
+import de.softwartechnik.book.fachlogik.BuecherVerwaltung;
 
 
 public class BuchHauptprogrammView extends Frame {

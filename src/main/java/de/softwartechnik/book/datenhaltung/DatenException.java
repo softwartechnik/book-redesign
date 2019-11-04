@@ -1,4 +1,4 @@
-package main.java.de.softwartechnik.book.datenhaltung;
+package de.softwartechnik.book.datenhaltung;
 
 public class DatenException extends Exception {
 

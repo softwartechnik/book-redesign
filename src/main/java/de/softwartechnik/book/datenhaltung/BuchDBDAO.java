@@ -1,4 +1,4 @@
-package main.java.de.softwartechnik.book.datenhaltung;
+package de.softwartechnik.book.datenhaltung;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.List;
-import main.java.de.softwartechnik.book.fachlogik.Buch;
+import de.softwartechnik.book.fachlogik.Buch;
 
 /**
  * Ein DAO für die Klasse Buch. Das DAO realisiert einen Zugriff auf eine relationale
