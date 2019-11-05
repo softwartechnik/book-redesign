@@ -1,14 +1,13 @@
 package de.softwartechnik.book.gui;
 
+import de.softwartechnik.book.datenhaltung.BuchSerializeDAO;
+import de.softwartechnik.book.datenhaltung.IBuchDAO;
+import de.softwartechnik.book.fachlogik.BuecherVerwaltung;
 import java.awt.Button;
 import java.awt.Frame;
 import java.awt.GridLayout;
 import java.awt.Panel;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
-import de.softwartechnik.book.datenhaltung.BuchSerializeDAO;
-import de.softwartechnik.book.fachlogik.BuecherVerwaltung;
 
 
 public class BuchHauptprogrammView extends Frame {
@@ -26,9 +25,10 @@ public class BuchHauptprogrammView extends Frame {
   }
 
   public static void main(String[] args) {
-    BuecherVerwaltung buchliste = new BuecherVerwaltung(
-      new BuchSerializeDAO(new File("/Users/dwiesmann/IO/buchliste.ser")));
-    //BuecherVerwaltung buchliste = new BuecherVerwaltung(new BuchDBDAO("/home/dwiesmann/DB/buchDB"));
+    //IBuchDAO buchDAO = new BuchDBDAO("/home/dwiesmann/DB/buchDB");
+    IBuchDAO buchDAO = new BuchSerializeDAO(new File("/Users/dwiesmann/IO/buchliste.ser"));
+    BuecherVerwaltung buchliste = new BuecherVerwaltung(buchDAO);
+
     Controller controller = new Controller(buchliste);
     controller.start();
 
@@ -36,38 +36,22 @@ public class BuchHauptprogrammView extends Frame {
 
   private Panel createButtonPanel() {
     Panel p = new Panel(new GridLayout(5, 1));
+
     Button neu = new Button("Neu");
-    neu.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        controller.neu();
-      }
-    });
+    neu.addActionListener(action -> controller.neu());
+
     Button laden = new Button("Laden");
-    laden.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        controller.laden();
-      }
+    laden.addActionListener(action -> controller.laden());
 
-    });
     Button listen = new Button("Liste");
-    listen.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        controller.liste();
-      }
-    });
-    Button speicher = new Button("Speichern");
-    speicher.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        controller.speichern();
-      }
+    listen.addActionListener(action -> controller.liste());
 
-    });
+    Button speicher = new Button("Speichern");
+    speicher.addActionListener(action -> controller.speichern());
+
     Button abr = new Button("Fertig");
-    abr.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        controller.fertig();
-      }
-    });
+    abr.addActionListener(action -> controller.fertig());
+
     p.add(neu);
     p.add(laden);
     p.add(listen);
