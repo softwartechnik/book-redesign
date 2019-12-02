@@ -28,7 +28,7 @@ class BuecherVerwaltungTest {
     buecherVerwaltung.speichern();
 
     var books = buchDaoStub.savedBooks();
-    assertEquals(0, books.size());
+    assertTrue(books.isEmpty());
   }
 
   @Test
