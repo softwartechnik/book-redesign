@@ -40,8 +40,8 @@ class BuecherVerwaltungTest {
 
     var books = buchDaoStub.savedBooks();
     assertEquals(2, books.size());
-    assertEquals(BOOK_1, books.get(0));
-    assertEquals(BOOK_2, books.get(1));
+    assertTrue(books.contains(BOOK_1));
+    assertTrue(books.contains(BOOK_2));
   }
 
   public static final class BuchDaoStub implements IBuchDAO {
