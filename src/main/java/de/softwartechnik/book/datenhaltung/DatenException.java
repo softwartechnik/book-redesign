@@ -7,5 +7,4 @@ public class DatenException extends Exception {
   public DatenException(String msg) {
     super(msg);
   }
-
 }
