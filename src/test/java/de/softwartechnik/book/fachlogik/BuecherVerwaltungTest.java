@@ -22,7 +22,7 @@ class BuecherVerwaltungTest {
     buecherVerwaltung = new BuecherVerwaltung(buchDaoStub);
   }
   @Test
-  void laden() throws DatenException {
+  void testLaden() throws DatenException {
     buchDaoStub.speichern(List.of(BOOK_1));
 
     buecherVerwaltung.speichern();
@@ -32,7 +32,7 @@ class BuecherVerwaltungTest {
   }
 
   @Test
-  void speichern() throws DatenException {
+  void testSpeichern() throws DatenException {
     buecherVerwaltung.add(BOOK_1);
     buecherVerwaltung.add(BOOK_2);
 
