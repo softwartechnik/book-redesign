@@ -19,6 +19,7 @@ dependencies {
   testImplementation 'org.junit.platform:junit-platform-engine:1.5.2'
   testImplementation 'org.mockito:mockito-core:3.1.0'
   testImplementation 'org.mockito:mockito-junit-jupiter:3.1.0'
+  testImplementation group: 'org.easymock', name: 'easymock', version: '4.1'
 }
 
 application {
