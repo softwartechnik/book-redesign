@@ -2,6 +2,7 @@ package de.softwartechnik.book.fachlogik;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import de.softwartechnik.book.datenhaltung.DatenException;
@@ -38,6 +39,8 @@ public final class BuecherVerwaltungMockedTest {
 
     buecherVerwaltung.laden();
     var buchliste = buecherVerwaltung.getBuchliste();
+
+    verify(buchDAO).laden();
     assertEquals(givenBooks, buchliste);
   }
 
@@ -51,7 +54,7 @@ public final class BuecherVerwaltungMockedTest {
 
     buecherVerwaltung.speichern();
 
-    Mockito.verify(buchDAO).speichern(bookCaptor.capture());
+    verify(buchDAO).speichern(bookCaptor.capture());
 
     var savedBooks = bookCaptor.getValue();
     assertEquals(2, savedBooks.size());
