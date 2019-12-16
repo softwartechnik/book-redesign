@@ -9,6 +9,11 @@
 ant dist
 ```
 
+### Test
+```shell script
+ant clean test
+```
+
 3. Find result at `./dist/book-redesign.jar`
 
 ## Build via Gradle
@@ -20,3 +25,8 @@ ant dist
 ```
 
 2. Find result at `./build/libs/book-redesign-0.1.0-SNAPSHOT.jar`
+
+### Test
+```shell script
+./gradlew test
+```

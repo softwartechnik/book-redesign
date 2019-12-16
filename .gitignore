@@ -11,3 +11,6 @@ build
 # Ant
 ant-build
 dist
+lib
+ant-build-test
+ant-test-results

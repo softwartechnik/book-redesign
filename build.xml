@@ -1,17 +1,33 @@
-<project name="BuchRedesign" default="dist" basedir=".">
+<project name="book-redesign" default="dist" basedir="." xmlns:ivy="antlib:org.apache.ivy.ant">
+
   <!-- Define basic properties -->
   <property name="src" location="src/main/java"/>
   <property name="build" location="ant-build"/>
   <property name="dist" location="dist"/>
+  <property name="test.src" value="src/test/java"/>
+  <property name="test.build" value="ant-build-test"/>
+  <property name="test.reports" value="ant-test-results"/>
 
   <!-- Create build directory -->
   <target name="init">
     <mkdir dir="${build}"/>
+    <mkdir dir="${test.reports}"/>
   </target>
 
   <!-- Compile sources -->
   <target name="compile" depends="init">
     <javac srcdir="${src}" destdir="${build}"/>
+  </target>
+
+  <target name="compile-test" depends="compile, resolve" description="Compile tests">
+    <mkdir dir="${test.build}"/>
+    <javac srcdir="${test.src}" destdir="${test.build}" includeantruntime="false"
+      debug="true">
+      <classpath>
+        <path refid="test.path"/>
+        <pathelement path="${build}"/>
+      </classpath>
+    </javac>
   </target>
 
   <!-- Distribute jar -->
@@ -20,9 +36,53 @@
     <jar jarfile="${dist}/lib/book-redesign.jar" basedir="${build}"/>
   </target>
 
+  <!-- Run JUnit Tests -->
+  <target name="test" depends="compile-test">
+    <mkdir dir="${test.src}"/>
+
+    <junitlauncher haltOnFailure="true" printSummary="true">
+      <classpath>
+        <path refid="test.path"/>
+        <pathelement path="${build}"/>
+        <pathelement path="${test.build}"/>
+      </classpath>
+      <testclasses outputdir="${test.reports}">
+        <fileset dir="${test.build}">
+          <include name="**/*Test.class"/>
+        </fileset>
+        <listener type="legacy-xml" sendSysOut="true" sendSysErr="true"/>
+        <listener type="legacy-plain" sendSysOut="true" />
+      </testclasses>
+    </junitlauncher>
+    <junitreport todir="${test.reports}">
+      <fileset dir="${test.reports}">
+        <include name="TEST-*.xml"/>
+      </fileset>
+      <report format="frames" todir="${test.reports}/html"/>
+    </junitreport>
+  </target>
+
   <!-- Cleanup build and distribution -->
   <target name="clean" description="clean up">
     <delete dir="${build}"/>
     <delete dir="${dist}"/>
+    <delete dir="${test.build}"/>
+    <delete dir="${test.reports}"/>
+  </target>
+
+  <available classname="org.apache.ivy.Main" property="ivy.installed"/>
+
+  <!-- Ivy Setup -->
+  <target name="install-ivy" unless="ivy.installed">
+    <mkdir dir="${user.home}/.ant/lib"/>
+    <get dest="${user.home}/.ant/lib/ivy.jar"
+      src="http://search.maven.org/remotecontent?filepath=org/apache/ivy/ivy/2.5.0/ivy-2.5.0.jar"/>
+  </target>
+
+  <!-- Resolve dependencies via ivy -->
+  <target name="resolve" depends="install-ivy">
+    <ivy:retrieve/>
+    <ivy:cachepath pathid="compile.path" conf="compile"/>
+    <ivy:cachepath pathid="test.path" conf="test"/>
   </target>
 </project>
