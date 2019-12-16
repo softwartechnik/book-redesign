@@ -17,7 +17,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
-public final class BuecherVerwaltungMockedTest {
+public class BuecherVerwaltungMockedTest {
   private static final Buch BOOK_1 = new Buch("Das Leben", 1);
   private static final Buch BOOK_2 = new Buch("Der Tod", 2);
 

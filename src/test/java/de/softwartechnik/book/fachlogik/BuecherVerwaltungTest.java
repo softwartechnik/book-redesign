@@ -21,6 +21,7 @@ class BuecherVerwaltungTest {
     buchDaoStub = BuchDaoStub.empty();
     buecherVerwaltung = new BuecherVerwaltung(buchDaoStub);
   }
+
   @Test
   void testLaden() throws DatenException {
     buchDaoStub.speichern(List.of(BOOK_1));
