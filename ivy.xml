@@ -1,0 +1,11 @@
+<ivy-module version="2.0">
+  <info organisation="org.apache" module="hello-ivy"/>
+  <dependencies>
+    <dependency org="org.junit.jupiter" name="junit-jupiter-api" rev="5.5.2"/>
+    <dependency org="org.junit.jupiter" name="junit-jupiter-params" rev="5.5.2"/>
+    <dependency org="org.junit.jupiter" name="junit-jupiter-engine" rev="5.5.2"/>
+    <dependency org="org.junit.platform" name="junit-platform-engine" rev="1.5.2"/>
+    <dependency org="org.mockito" name="mockito-junit-jupiter" rev="3.2.0"/>
+    <dependency org="org.mockito" name="mockito-core" rev="3.2.0"/>
+  </dependencies>
+</ivy-module>

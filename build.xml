@@ -1,0 +1,28 @@
+<project name="BuchRedesign" default="dist" basedir=".">
+  <!-- Define basic properties -->
+  <property name="src" location="src/main/java"/>
+  <property name="build" location="ant-build"/>
+  <property name="dist" location="dist"/>
+
+  <!-- Create build directory -->
+  <target name="init">
+    <mkdir dir="${build}"/>
+  </target>
+
+  <!-- Compile sources -->
+  <target name="compile" depends="init">
+    <javac srcdir="${src}" destdir="${build}"/>
+  </target>
+
+  <!-- Distribute jar -->
+  <target name="dist" depends="compile">
+    <mkdir dir="${dist}/lib"/>
+    <jar jarfile="${dist}/lib/book-redesign.jar" basedir="${build}"/>
+  </target>
+
+  <!-- Cleanup build and distribution -->
+  <target name="clean" description="clean up">
+    <delete dir="${build}"/>
+    <delete dir="${dist}"/>
+  </target>
+</project>
