@@ -45,6 +45,15 @@ class BuecherVerwaltungTest {
     assertTrue(books.contains(BOOK_2));
   }
 
+  @Test
+  void testGetBook() {
+    var theLifeBook = new Buch("Das Leben", 1);
+    buecherVerwaltung.add(theLifeBook);
+
+    var book = buecherVerwaltung.getBuch(0);
+    assertEquals(theLifeBook, book);
+  }
+
   public static final class BuchDaoStub implements IBuchDAO {
     private List<Buch> savedBooks;
 
