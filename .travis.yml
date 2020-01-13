@@ -2,7 +2,8 @@
 ### Language ###
 ################
 language: java
-install: false
+
+install: skip
 
 ###########
 ### JDK ###
