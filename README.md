@@ -1,3 +1,13 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=softwartechnik_book-redesign&metric=alert_status)](https://sonarcloud.io/dashboard?id=softwartechnik_book-redesign)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=softwartechnik_book-redesign&metric=coverage)](https://sonarcloud.io/dashboard?id=softwartechnik_book-redesign)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=softwartechnik_book-redesign&metric=coverage)](https://sonarcloud.io/dashboard?id=softwartechnik_book-redesign)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=softwartechnik_book-redesign&metric=ncloc)](https://sonarcloud.io/dashboard?id=softwartechnik_book-redesign)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=softwartechnik_book-redesign&metric=ncloc)](https://sonarcloud.io/dashboard?id=softwartechnik_book-redesign)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=softwartechnik_book-redesign&metric=bugs)](https://sonarcloud.io/dashboard?id=softwartechnik_book-redesign)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=softwartechnik_book-redesign&metric=code_smells)](https://sonarcloud.io/dashboard?id=softwartechnik_book-redesign)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=softwartechnik_book-redesign&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=softwartechnik_book-redesign)
+
+
 # BuchRedesign
 
 ## Build via ant
