@@ -37,6 +37,4 @@ addons:
 ### Build script ###
 ####################
 script:
-  - mvn checkstyle:check
-  - mvn clean compile package
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=softwartechnik_book-redesign
+  - mvn clean compile checkstyle:check spotbugs:spotbugs org.jacoco:jacoco-maven-plugin:prepare-agent sonar:sonar -Dsonar.projectKey=softwartechnik_book-redesign install site
