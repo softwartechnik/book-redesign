@@ -1,0 +1,49 @@
+################
+### Language ###
+################
+language: java
+
+install: skip
+
+###########
+### JDK ###
+###########
+jdk:
+  - oraclejdk11
+
+###############
+### Caching ###
+###############
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
+
+#####################
+### Notifications ###
+#####################
+notifications:
+  email: false
+
+#################
+### SonarQube ###
+#################
+addons:
+  sonarcloud:
+    organization: "softwartechnik"
+    token:
+      secure: tGnRgqcHBaAAetEtoqs8GJVoTtove0GyDTyvHYQNmZ/ywF7fW1XfwiIw4GvqAru7OqwvzZJfD0CFXS8rcOgK+gzPLi834dIBCnG8q5HmY/nS26Svbxbjcbw5bjgQUpnzS2DTqlxFsCm5q+9Pi7viLTBftFKUo+Yom4ifLuPCvVE7p1hCRqI+UpY0kbzlyFLlYnn7A0F1xC9BCTqhqlozeQ4d/PUJvyrLhTrFOEmMzvgw+ZBpuSZule8pmzrkuIerASKDA9FQmeCsp0n5eTQvpYtnrM5g24TdzEJekT2B3wrDuVuEL21cDveGgGNlqS5OFMrqQiwwULvFNfIvZIgz48PIAR4WVwX7QAvdDJeP4UZOO/344GEm/MXcEyI58itg5Y+dClFX5ApHcelcdC8ZwJGJwhMp+cxjlueS4Hj66u9YD0vJAI2sDct73UjI5IKbhUVKPnmJAMEBSyJyH03BZCn8tOqFUdMKYWAKpUxa7xIH0cF6qIKeTCY4ybR8Xxrw4kkY6b98cVoKqLNvYJYLCC1GQ/sTTYxSuHP67AupdquMxwwUhfOpMvrBW0jvGu++juVYsFYCdjZ8UdhVuq3Tqn7GXiDxrhwc7tUFShcWdVdJe0xq/zTqDgYlvbayuiAVkUh0cdiwl7hzQQNiIHJsTlWOD+RH493JnfpwwdB5pDw=
+
+####################
+### Build script ###
+####################
+script:
+  - mvn clean install checkstyle:check spotbugs:spotbugs pmd:pmd org.jacoco:jacoco-maven-plugin:prepare-agent sonar:sonar -Dsonar.projectKey=softwartechnik_book-redesign install site
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  on:
+    branch: master
