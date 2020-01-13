@@ -5,7 +5,7 @@
 1. Install Ant via this [Guide](https://ant.apache.org/manual/install.html)
 2. Run dist command
 3. Find result at `./dist/book-redesign.jar`
-4. Browse test Results at `ant-test-results/html/index.html`
+4. Browse test Results at `ant-test-results/html/index.html`g
 
 ### Build
 ```shell script
