@@ -39,3 +39,11 @@ addons:
 ####################
 script:
   - mvn clean install checkstyle:check spotbugs:spotbugs pmd:pmd org.jacoco:jacoco-maven-plugin:prepare-agent sonar:sonar -Dsonar.projectKey=softwartechnik_book-redesign install site
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  on:
+    branch: master
