@@ -3,4 +3,4 @@ pipeline:
     image: openjdk:11
     secrets: []
     commands:
-      - mvn clean install checkstyle:check spotbugs:spotbugs pmd:pmd org.jacoco:jacoco-maven-plugin:prepare-agent
+      - ./gradlew check build
