@@ -15,15 +15,15 @@ Die SonarQube Analyse erfolgt mit SonarCloud und ist [hier](https://sonarcloud.i
 
 The build systems are configured with the following features:
 
-|     Feature Support    |         Ant        |        Maven       |       Gradle       |
-|:----------------------:|:------------------:|:------------------:|:------------------:|
-|          Build         | ✅ | ✅ | ✅ |
-|  Test (JUnit Jupiter)  | ✅ | ✅ | ✅|
-| Test Coverage (JaCoCo) |         ❌        | ✅ | ✅ |
-|           PMD          |         ❌        | ✅ | ✅ |
-|        SpotBugs        |         ❌        | ✅ | ✅ |
-|       CheckStyle       |         ❌        | ✅ | ✅ |
-| SonarQube (SonarCloud) |         ❌        | ✅ |         ❌        |
+|     Feature Support    | Ant | Maven | Gradle |
+|:----------------------:|:---:|:-----:|:------:|
+|          Build         |  ✅  |   ✅   |    ✅   |
+|  Test (JUnit Jupiter)  |  ✅  |   ✅   |    ✅   |
+| Test Coverage (JaCoCo) |  ❌  |   ✅   |    ✅   |
+|           PMD          |  ❌  |   ✅   |    ✅   |
+|        SpotBugs        |  ❌  |   ✅   |    ✅   |
+|       CheckStyle       |  ❌  |   ✅   |    ✅   |
+| SonarQube (SonarCloud) |  ❌  |   ✅   |    ❌   |
 
 Note: Gradle supports SonarQube Report, but it was disabled to ensure there aren't duplicated reports for each build.
 
