@@ -11,6 +11,22 @@
 
 Die SonarQube Analyse erfolgt mit SonarCloud und ist [hier](https://sonarcloud.io/dashboard?id=softwartechnik_book-redesign) zu finden.
 
+## Support Matrix
+
+The build systems are configured with the following features:
+
+|     Feature Support    |         Ant        |        Maven       |       Gradle       |
+|:----------------------:|:------------------:|:------------------:|:------------------:|
+|          Build         | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+|  Test (JUnit Jupiter)  | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Test Coverage (JaCoCo) |         :x:        | :white_check_mark: | :white_check_mark: |
+|           PMD          |         :x:        | :white_check_mark: | :white_check_mark: |
+|        SpotBugs        |         :x:        | :white_check_mark: | :white_check_mark: |
+|       CheckStyle       |         :x:        | :white_check_mark: | :white_check_mark: |
+| SonarQube (SonarCloud) |         :x:        | :white_check_mark: |         :x:        |
+
+Note: Gradle supports SonarQube Report, but it was disabled to ensure there aren't duplicated reports for each build.
+
 ## Build Status
 |        | Provider | Build Status                                                                                                                                |
 |--------|-----------|---------------------------------------------------------------------------------------------------------------------------------------------|
