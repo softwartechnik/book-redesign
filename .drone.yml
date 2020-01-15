@@ -1,0 +1,6 @@
+pipeline:
+  build:
+    image: openjdk:11
+    secrets: []
+    commands:
+      - ./gradlew clean check build
