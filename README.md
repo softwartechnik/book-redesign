@@ -17,13 +17,13 @@ The build systems are configured with the following features:
 
 |     Feature Support    |         Ant        |        Maven       |       Gradle       |
 |:----------------------:|:------------------:|:------------------:|:------------------:|
-|          Build         | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-|  Test (JUnit Jupiter)  | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| Test Coverage (JaCoCo) |         :x:        | :white_check_mark: | :white_check_mark: |
-|           PMD          |         :x:        | :white_check_mark: | :white_check_mark: |
-|        SpotBugs        |         :x:        | :white_check_mark: | :white_check_mark: |
-|       CheckStyle       |         :x:        | :white_check_mark: | :white_check_mark: |
-| SonarQube (SonarCloud) |         :x:        | :white_check_mark: |         :x:        |
+|          Build         | ✅ | ✅ | ✅ |
+|  Test (JUnit Jupiter)  | ✅ | ✅ | ✅|
+| Test Coverage (JaCoCo) |         ❌        | ✅ | ✅ |
+|           PMD          |         ❌        | ✅ | ✅ |
+|        SpotBugs        |         ❌        | ✅ | ✅ |
+|       CheckStyle       |         ❌        | ✅ | ✅ |
+| SonarQube (SonarCloud) |         ❌        | ✅ |         ❌        |
 
 Note: Gradle supports SonarQube Report, but it was disabled to ensure there aren't duplicated reports for each build.
 
