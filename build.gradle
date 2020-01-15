@@ -4,6 +4,7 @@ plugins {
   id 'jacoco'
   id 'checkstyle'
   id "com.github.spotbugs" version "3.0.0"
+  id 'pmd'
   id 'application'
 }
 
@@ -45,6 +46,10 @@ checkstyle {
 }
 
 spotbugs {
+  ignoreFailures = true
+}
+
+pmd {
   ignoreFailures = true
 }
 
