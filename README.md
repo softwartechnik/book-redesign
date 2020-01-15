@@ -5,13 +5,13 @@
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=softwartechnik_book-redesign&metric=code_smells)](https://sonarcloud.io/dashboard?id=softwartechnik_book-redesign)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=softwartechnik_book-redesign&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=softwartechnik_book-redesign)
 
-
 # BuchRedesign
 
 ## Build Status
-|        | Build Status                                                                                                                                |
-|--------|---------------------------------------------------------------------------------------------------------------------------------------------|
-| Master | [![Build Status](https://travis-ci.com/softwartechnik/book-redesign.svg?branch=master)](https://travis-ci.com/softwartechnik/book-redesign) |
+|        | Provider | Build Status                                                                                                                                |
+|--------|-----------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| Master | Travis CI | [![Build Status](https://travis-ci.com/softwartechnik/book-redesign.svg?branch=master)](https://travis-ci.com/softwartechnik/book-redesign) |
+| Master | Drone | [![Drone Build Status](http://drone.pipeline/api/badges/SWTD-WS1920-God/BuchRedesign/status.svg?branch=master)](http://drone.pipeline/SWTD-WS1920-God/BuchRedesign) |
 
 ### Build via ant
 
