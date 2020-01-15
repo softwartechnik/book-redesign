@@ -7,6 +7,10 @@
 
 # BuchRedesign
 
+## SonarQube Analyse
+
+Die SonarQube Analyse erfolgt mit SonarCloud und ist [hier](https://sonarcloud.io/dashboard?id=softwartechnik_book-redesign) zu finden.
+
 ## Build Status
 |        | Provider | Build Status                                                                                                                                |
 |--------|-----------|---------------------------------------------------------------------------------------------------------------------------------------------|
