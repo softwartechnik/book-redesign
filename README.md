@@ -32,6 +32,7 @@ Note: Gradle supports SonarQube Report, but it was disabled to ensure there aren
 |--------|-----------|---------------------------------------------------------------------------------------------------------------------------------------------|
 | Master | Travis CI | [![Build Status](https://travis-ci.com/softwartechnik/book-redesign.svg?branch=master)](https://travis-ci.com/softwartechnik/book-redesign) |
 | Master | Drone | [![Drone Build Status](http://drone.pipeline/api/badges/SWTD-WS1920-God/BuchRedesign/status.svg?branch=master)](http://drone.pipeline/SWTD-WS1920-God/BuchRedesign) |
+| Master | Drone (Public) | [![Build Status](https://drone.klauke-enterprises.com/api/badges/softwartechnik/book-redesign/status.svg)](https://drone.klauke-enterprises.com/softwartechnik/book-redesign) |
 
 ### Build via ant
 
