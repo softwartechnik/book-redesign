@@ -1,0 +1,7 @@
+kind: pipeline
+name: default
+
+steps:
+  - name: build
+    commands:
+      - ./gradlew build
